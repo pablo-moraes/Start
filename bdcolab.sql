@@ -10,22 +10,14 @@ CREATE TABLE tb_organizacao (
     tp_causa_social VARCHAR(45) NOT NULL, 
     dt_criacao DATE NOT NULL, 
     dt_cadastro DATE NOT NULL,
-<<<<<<< HEAD
     ds_atividade VARCHAR(255) NOT NULL,
-=======
-    descricao_atividade VARCHAR(255) NOT NULL, -- ds_atividade
->>>>>>> 765f58286cfe84c301a3e4d2e2493d9f1752ab00
 	PRIMARY KEY(id_org),
     FOREIGN KEY (id_responsavel_org) REFERENCES tb_no_responsavel(id_responsavel_org)
 );
 
 CREATE TABLE tb_no_responsavel (
 	id_responsavel_org INT(6) NOT NULL AUTO_INCREMENT,
-<<<<<<< HEAD
     no_responsavel VARCHAR(55) NOT NULL,
-=======
-    nome_responsavel VARCHAR(55) NOT NULL, -- no_responsavel
->>>>>>> 765f58286cfe84c301a3e4d2e2493d9f1752ab00
     num_cpf VARCHAR(11) NOT NULL,
     num_rg VARCHAR(11) NOT NULL,
     PRIMARY KEY(id_responsavel_org)
@@ -76,7 +68,6 @@ CREATE TABLE endereco_organizacao (
     PRIMARY KEY(id_endereco_organizacao)
 );
 
-<<<<<<< HEAD
 CREATE TABLE endereco_pessoa_fisica(
 	id_endereco_pessoa_fs INT AUTO_INCREMENT,
     id_endereco INT,
@@ -97,33 +88,3 @@ CREATE TABLE tb_pessoa_fisica (
     ds_cidade VARCHAR(30),
     PRIMARY KEY(id_pessoa_fs)
 );
-=======
-CREATE TABLE tb_endereco_org(
-	id_org INT, --id_endereco_org
-	endereco VARCHAR(20), -- ds_endereco_org
-    bairro VARCHAR(20), -- ds_bairro
-    cep CHAR(8), -- ds_cep
-    cidade VARCHAR(30), --ds_cidade
-    uf CHAR(2), -- UF pode ser uma tabela de fk 
-	FOREIGN KEY(id_org) REFERENCES tb_organizacao(id_org)
-);
-
-CREATE TABLE tb_pessoa_fs ( --nao abrevia o nome das tabelas
-	id_pessoa_fs INT(6) NOT NULL AUTO_INCREMENT,
-    nome_pessoa VARCHAR(55) NOT NULL -- no_,
-    num_cpf_pessoa VARCHAR(11) NOT NULL,
-    num_rg_pessoa VARCHAR(14),
-	endereco VARCHAR(20) --ds_,
-    bairro VARCHAR(20) --ds_,
-    cep CHAR(8), --ds_
-    cidade VARCHAR(30), ds_
-    uf CHAR(2), --ds_
-    PRIMARY KEY(id_pessoa_fs)
-);
-
-CREATE TABLE tb_telefone_pessoa (
-	id_pessoa_fs INT,
-    tel_pessoa VARCHAR(14),
-    FOREIGN KEY (id_pessoa_fs) REFERENCES tb_pessoa_fs(id_pessoa_fs)
-);
->>>>>>> 765f58286cfe84c301a3e4d2e2493d9f1752ab00
